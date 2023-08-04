@@ -1,0 +1,47 @@
+DELETE FROM suscriptor;
+INSERT INTO SUSCRIPTOR(nombre, identificacion, direccion, telefono, estado) values ('Pepito Perez', '1234567', 'Avenida siempre viva 123', '5250604', true);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('Carlos Cajia', '654321', 'Avenida Siempre Viva 124', '5243098', true);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('John Doe', '15807569', 'Avenida Siempre Viva 125', '5243097', true);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('Casimiro Chiflamicas', '25967154', 'Avenida Siempre Viva 126', '5243096', false);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('Fabiola Losada', '12305', 'Avenida Siempre Viva 127', '5243095', true);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('Carolina Ramirez', '125630', 'Avenida Siempre Viva 128', '5243094', true);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('Andrea Cubides', '159357', 'Avenida Siempre Viva 129','5243093', true);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('Paola Perez', '159356', 'Avenida Siempre Viva 120','5243092',true);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('Licenia Carvalo', 'A159354', 'Avenida Siempre Viva 121', '5243091', false);
+INSERT INTO SUSCRIPTOR (nombre, identificacion, direccion, telefono, estado) VALUES ('Licimaco Orejulea', '932735', 'Avenida Siempre Viva 121', '5243091', false);
+
+DELETE FROM datos_suscriptor;
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (1, '2000-12-01', 'M', 85.3, 165);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (2, '1999-12-01', 'M', 85.3, 190);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (3, '2001-12-01', 'M', 85.3, 180);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (4, '2002-12-01', 'M', 85.3, 170);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (5, '1998-12-01', 'F', 65.3, 150);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (6, '1998-12-01', 'F', 75.3, 165);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (7, '1998-12-01', 'F', 55.3, 160);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (8, '1998-12-01', 'F', 65.3, 170);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (9, '1997-12-01', 'F', 55.3, 189);
+INSERT INTO datos_suscriptor(idSuscriptor, fechaNacimiento, sexo, peso, altura) values (10, '1996-12-01', 'M', 85.3, 165);
+
+DELETE FROM suscripcion;
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (1, '2023-07-25', '2023-08-25', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (2, '2023-07-26', '2023-08-26', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (3, '2023-07-25', '2023-08-25', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (4, '2023-07-25', '2023-08-25', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (5, '2023-07-25', '2023-08-25', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (6, '2023-07-25', '2023-08-25', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (7, '2023-07-25', '2023-08-25', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (8, '2023-07-25', '2023-08-25', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (9, '2023-07-25', '2023-08-25', true);
+INSERT INTO suscripcion (idSuscriptor, fechaInicio, fechaFinalizacion, estado) values (10, '2023-07-25', '2023-08-25', true);
+
+DELETE FROM pago;
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (1, 110000, '2023-07-25');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (2, 110000, '2023-07-26');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (3, 110000, '2023-07-25');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (4, 110000, '2023-07-25');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (5, 110000, '2023-07-25');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (6, 110000, '2023-07-25');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (7, 110000, '2023-07-25');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (8, 110000, '2023-07-25');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (9, 110000, '2023-07-25');
+INSERT INTO PAGO (idSuscriptor, valorPago, fechaPago) values (10, 110000, '2023-07-25');

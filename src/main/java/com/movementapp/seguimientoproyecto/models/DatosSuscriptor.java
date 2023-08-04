@@ -3,11 +3,13 @@ package com.movementapp.seguimientoproyecto.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
+@Table("datos_suscriptor")
 public class DatosSuscriptor {
     @Id
     private Integer id;
