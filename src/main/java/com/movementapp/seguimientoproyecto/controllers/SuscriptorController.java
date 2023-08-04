@@ -18,12 +18,12 @@ public class SuscriptorController {
     }
 
     @GetMapping("/")
-    public Flux<Suscriptor> findAll() {
+    public Flux<Suscriptor> getAllSuscriptores() {
         return suscriptorService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Mono<Suscriptor> findById(@PathVariable Integer id) {
+    public Mono<Suscriptor> getSuscriptorById(@PathVariable Integer id) {
         return suscriptorService.findById(id);
     }
 
