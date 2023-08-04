@@ -2,9 +2,11 @@ package com.movementapp.seguimientoproyecto.repositories;
 
 import com.movementapp.seguimientoproyecto.models.Suscriptor;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
+import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Repository
 public interface SuscriptorRepository extends R2dbcRepository<Suscriptor, Integer> {
 
     Flux<Suscriptor> findByEstado(Boolean estado);
