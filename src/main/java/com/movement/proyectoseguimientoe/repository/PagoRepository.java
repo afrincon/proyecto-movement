@@ -1,6 +1,6 @@
-package com.movementapp.seguimientoproyecto.repositories;
+package com.movement.proyectoseguimientoe.repository;
 
-import com.movementapp.seguimientoproyecto.models.Pago;
+import com.movement.proyectoseguimientoe.model.Pago;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.movementapp.seguimientoproyecto;
+package com.movement.proyectoseguimientoe;
 
 import io.r2dbc.spi.ConnectionFactory;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +10,10 @@ import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer;
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
 
 @SpringBootApplication
-public class SeguimientoProyectoApplication {
+public class ProyectoSeguimientoeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SeguimientoProyectoApplication.class, args);
+        SpringApplication.run(ProyectoSeguimientoeApplication.class, args);
     }
 
     @Bean

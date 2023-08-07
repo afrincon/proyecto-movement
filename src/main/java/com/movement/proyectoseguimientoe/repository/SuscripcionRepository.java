@@ -1,6 +1,7 @@
-package com.movementapp.seguimientoproyecto.repositories;
+package com.movement.proyectoseguimientoe.repository;
 
-import com.movementapp.seguimientoproyecto.models.Suscripcion;
+import com.movement.proyectoseguimientoe.model.Suscripcion;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
