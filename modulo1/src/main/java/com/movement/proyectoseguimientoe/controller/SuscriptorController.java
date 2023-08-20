@@ -3,9 +3,12 @@ package com.movement.proyectoseguimientoe.controller;
 import com.movement.proyectoseguimientoe.model.Suscriptor;
 import com.movement.proyectoseguimientoe.service.SuscriptorKafkaConsumerService;
 import com.movement.proyectoseguimientoe.service.SuscriptorService;
+import com.movement.proyectoseguimientoe.service.SuscriptorSQSService;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/suscriptor")
@@ -15,9 +18,14 @@ public class SuscriptorController {
 
     SuscriptorKafkaConsumerService suscriptorKafkaConsumerService;
 
-    public SuscriptorController(SuscriptorService suscriptorService, SuscriptorKafkaConsumerService suscriptorKafkaConsumerService) {
+    SuscriptorSQSService suscriptorSqsService;
+
+    public SuscriptorController(SuscriptorService suscriptorService,
+                                SuscriptorKafkaConsumerService suscriptorKafkaConsumerService,
+                                SuscriptorSQSService suscriptorSqsService) {
         this.suscriptorService = suscriptorService;
         this.suscriptorKafkaConsumerService = suscriptorKafkaConsumerService;
+        this.suscriptorSqsService = suscriptorSqsService;
     }
 
     @GetMapping("/")
@@ -63,5 +71,18 @@ public class SuscriptorController {
     @GetMapping("/topico-kafka/{topico}")
     public Mono<String> getSuscriptorFromTopicoKafka(@PathVariable String topico) {
         return Mono.just(suscriptorKafkaConsumerService.obtenerSuscripcion(topico));
+    }
+
+    @PostMapping("/aws/createQueue")
+    public Mono<String> postCreateQueue(@RequestBody Map<String, Object> requestBody){
+        return Mono.just(suscriptorSqsService.createQueue((String) requestBody.get("queueName")));
+    }
+
+    @PostMapping("/aws/postMessageQueue/{queueName}")
+    public Mono<String> postMessageQueue(@RequestBody Suscriptor suscriptor, @PathVariable String queueName){
+        return Mono.just(suscriptorSqsService.publishStandardQueueMessage(
+                queueName,
+                2,
+                suscriptor));
     }
 }
