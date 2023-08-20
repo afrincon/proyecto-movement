@@ -35,7 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-# h2 database
-./testdb.mv.db
-testdb.mv.db

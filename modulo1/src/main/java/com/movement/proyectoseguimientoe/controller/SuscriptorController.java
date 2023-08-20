@@ -1,6 +1,7 @@
 package com.movement.proyectoseguimientoe.controller;
 
 import com.movement.proyectoseguimientoe.model.Suscriptor;
+import com.movement.proyectoseguimientoe.service.SuscriptorKafkaConsumerService;
 import com.movement.proyectoseguimientoe.service.SuscriptorService;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -12,8 +13,11 @@ public class SuscriptorController {
 
     SuscriptorService suscriptorService;
 
-    public SuscriptorController(SuscriptorService suscriptorService) {
+    SuscriptorKafkaConsumerService suscriptorKafkaConsumerService;
+
+    public SuscriptorController(SuscriptorService suscriptorService, SuscriptorKafkaConsumerService suscriptorKafkaConsumerService) {
         this.suscriptorService = suscriptorService;
+        this.suscriptorKafkaConsumerService = suscriptorKafkaConsumerService;
     }
 
     @GetMapping("/")
@@ -54,5 +58,10 @@ public class SuscriptorController {
     @GetMapping("/nombre/{nombre}")
     public Flux<Suscriptor> getSusciptorByNombre(@PathVariable String nombre) {
         return suscriptorService.getSuscriptorByNombre(nombre);
+    }
+
+    @GetMapping("/topico-kafka/{topico}")
+    public Mono<String> getSuscriptorFromTopicoKafka(@PathVariable String topico) {
+        return Mono.just(suscriptorKafkaConsumerService.obtenerSuscripcion(topico));
     }
 }
