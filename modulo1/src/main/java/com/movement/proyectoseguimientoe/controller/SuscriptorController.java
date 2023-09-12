@@ -4,6 +4,7 @@ import com.movement.proyectoseguimientoe.model.Suscriptor;
 import com.movement.proyectoseguimientoe.service.SuscriptorKafkaConsumerService;
 import com.movement.proyectoseguimientoe.service.SuscriptorService;
 import com.movement.proyectoseguimientoe.service.SuscriptorSQSService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -29,6 +30,7 @@ public class SuscriptorController {
     }
 
     @GetMapping("/")
+    @PreAuthorize("hasRole('USER')")
     public Flux<Suscriptor> getAllSuscriptor() {
         return suscriptorService.getAllSuscriptors();
     }
